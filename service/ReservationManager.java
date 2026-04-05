@@ -108,11 +108,9 @@ public class ReservationManager implements ReservationService {
         LocalDateTime currentTime = LocalDateTime.now(); 
     
         return activeReservations.values().stream()
-            // Filter out any reservations where the time is before right now
             .filter(reservation -> !reservation.reservationTime().isBefore(currentTime))
-            // Find the earliest one among the remaining future reservations
             .min(Comparator.comparing(Reservation::reservationTime))
-            // Return null if there are no future reservations left
+            // Return null if there are no future reservations left 
             .orElse(null);
     }
 

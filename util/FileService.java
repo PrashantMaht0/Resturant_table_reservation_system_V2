@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import model.Reservation;
 
+// Service class for handling file operations related to reservations
 public class FileService {
     private static final String reservationFilePath = "reservations.csv";
 

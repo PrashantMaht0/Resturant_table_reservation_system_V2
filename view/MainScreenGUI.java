@@ -18,7 +18,7 @@ public class MainScreenGUI extends JFrame {
     public MainScreenGUI(service.ReservationManager manager) {
         this.manager = manager;
         super("Home Screen");
-        currentLocale = java.util.Locale.ENGLISH;
+        currentLocale = java.util.Locale.of("en", "US");
         messages = java.util.ResourceBundle.getBundle("messages", currentLocale);
 
         titleName = new java.awt.Label();
@@ -126,9 +126,9 @@ public class MainScreenGUI extends JFrame {
         ToggleLangButton.addActionListener(e -> {
             // Swap the locale
             if (currentLocale.equals(java.util.Locale.ENGLISH)) {
-                currentLocale = new java.util.Locale("ga", "IE"); // Switch to Irish
+                currentLocale = java.util.Locale.of("ga", "IE"); // Switch to Irish
             } else {
-                currentLocale = java.util.Locale.ENGLISH; // Switch to English
+                currentLocale = java.util.Locale.of("en", "US"); // Switch to English
             }
 
             // Reload the bundle
